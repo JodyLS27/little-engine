@@ -10,6 +10,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Set output to a common /bin folder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
+include(cmake/FetchSFML.cmake)
+
 # Include Subdirectories/Projects
 add_subdirectory(engine)
 add_subdirectory(editor)
