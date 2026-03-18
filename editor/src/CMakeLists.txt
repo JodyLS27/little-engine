@@ -1,3 +1,3 @@
 # Editor src CMakeLists
 
-target_sources(engine PRIVATE)
+target_sources(editor PRIVATE)

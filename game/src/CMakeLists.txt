@@ -1,3 +1,3 @@
 # Game src CMakeLists
 
-target_sources()
+target_sources(game PRIVATE)
