@@ -8,4 +8,9 @@ target_include_directories(engine PUBLIC include)
 add_subdirectory(src)
 
 # Link SFML
-target_link_libraries(engine PUBLIC sfml-graphics)
+target_link_libraries(engine PRIVATE
+    SFML::Graphics
+    SFML::Window
+    SFML::System
+    SFML::Audio
+)
