@@ -1,0 +1,7 @@
+{
+  "name": "little-learners",
+  "version": "0.0.1",
+  "dependencies": [
+    "sfml"
+  ]
+}
