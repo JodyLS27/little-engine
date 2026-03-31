@@ -2,6 +2,8 @@
 
 int main()
 {
-    std::cout << "Hello World!" << std::endl;
-    std::cout << "Welcome to the Little-Learners Game!" << std::endl;
+    std::cout << "Hello World! \n";
+    std::cout << "Welcome to the Little-Learners Game! \n";
+
+    return 0;
 }
