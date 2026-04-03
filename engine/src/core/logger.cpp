@@ -1,26 +1,42 @@
+#include <iostream>
 #include <core/logger.hpp>
 
-// TODO: 1. Implement the Macros for ease of use for the helper functions.
-// TODO: 2. Implement each helper function to call ll_log
-// TODO: 3. Add switch for the `ll_log()` file check
-// TODO: 4. Include `__FILE__` and `__LINE__` in the log message.
-
-void engine::core::Logger::ll_log_fatal(std::string_view message, const char* file, int line_no)
+void engine::core::Logger::ll_log_fatal(const std::string_view message, const char* file, const int line_no)
 {
+    ll_log(LogLevel::FATAL, message, file, line_no);
 }
 
-void engine::core::Logger::ll_log_error(std::string_view message, const char* file, int line_no)
+void engine::core::Logger::ll_log_error(const std::string_view message, const char* file, const int line_no)
 {
+    ll_log(LogLevel::ERROR, message, file, line_no);
 }
 
-void engine::core::Logger::ll_log_warning(std::string_view message, const char* file, int line_no)
+void engine::core::Logger::ll_log_warning(const std::string_view message, const char* file, const int line_no)
 {
+    ll_log(LogLevel::WARNING, message, file, line_no);
 }
 
-void engine::core::Logger::ll_log_info(std::string_view message, const char* file, int line_no)
+void engine::core::Logger::ll_log_info(const std::string_view message, const char* file, const int line_no)
 {
+    ll_log(LogLevel::INFO, message, file, line_no);
 }
 
-void engine::core::Logger::ll_log(LogLevel log_level, std::string_view message, const char* file, int line_no)
+void engine::core::Logger::ll_log(const LogLevel log_level, const std::string_view message, const char* file,
+                                  const int line_no)
 {
+    // Variables for the output log based on the logLevel
+    std::string_view log_colour{};
+    std::string_view log_level_display{};
+
+    switch (log_level)
+    {
+    case LogLevel::FATAL:   log_colour = RED,       log_level_display = "FATAL"; break;
+    case LogLevel::ERROR:   log_colour = RED,       log_level_display = "ERROR"; break;;
+    case LogLevel::WARNING: log_colour = YELLOW,    log_level_display = "WARNING"; break;
+    case LogLevel::INFO:    log_colour = BLUE,      log_level_display = "INFO"; break;
+    default:                log_colour = RESET;     log_level_display = "MSG"; break;
+    }
+
+    std::cout << log_colour << "[" << log_level_display << "]" << " - [" << file << " : ````" << line_no << "]"
+        << RESET << " :: " << message << "\n";
 }
