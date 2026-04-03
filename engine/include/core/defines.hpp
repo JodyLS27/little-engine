@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include "core/logger.hpp"
+
 #ifdef RELEASE
 // ------- LOGGING -------
 // Only trigger a crash and error reporting

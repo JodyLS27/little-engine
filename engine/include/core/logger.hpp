@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string_view>
-#include "core/defines.hpp"
 
 namespace engine::core
 {
@@ -26,7 +25,7 @@ namespace engine::core
     private:
         static void ll_log(LogLevel log_level, std::string_view message, const char* file, int line_no);
 
-        // TODO: Add simple Colours and Bold Colours for More use cases and termianl styling
+        // TODO: Add simple Colours and Bold Colours for More use cases and terminal styling
         // Colours for logging
         static constexpr std::string_view RED{"\033[1;31m"};
         static constexpr std::string_view YELLOW{"\033[1;33m"};

@@ -30,10 +30,10 @@ void engine::core::Logger::ll_log(const LogLevel log_level, const std::string_vi
 
     switch (log_level)
     {
-    case LogLevel::FATAL:   log_colour = RED,       log_level_display = "FATAL"; break;
-    case LogLevel::ERROR:   log_colour = RED,       log_level_display = "ERROR"; break;;
-    case LogLevel::WARNING: log_colour = YELLOW,    log_level_display = "WARNING"; break;
-    case LogLevel::INFO:    log_colour = BLUE,      log_level_display = "INFO"; break;
+    case LogLevel::FATAL:   log_colour = RED;       log_level_display = "FATAL"; break;
+    case LogLevel::ERROR:   log_colour = RED;       log_level_display = "ERROR"; break;
+    case LogLevel::WARNING: log_colour = YELLOW;    log_level_display = "WARNING"; break;
+    case LogLevel::INFO:    log_colour = BLUE;      log_level_display = "INFO"; break;
     default:                log_colour = RESET;     log_level_display = "MSG"; break;
     }
 
