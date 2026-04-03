@@ -15,14 +15,17 @@ engine::core::App::~App()
 
 void engine::core::App::initialize()
 {
+    LL_LOG_INFO("engine Application initialized!");
 }
 
 void engine::core::App::run()
 {
+    LL_LOG_INFO("engine main loop Running");
 }
 
 void engine::core::App::shutdown()
 {
+    LL_LOG_INFO("engine subsystems shutting down!");
 }
 
 
