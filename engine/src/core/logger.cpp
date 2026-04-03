@@ -37,6 +37,6 @@ void engine::core::Logger::ll_log(const LogLevel log_level, const std::string_vi
     default:                log_colour = RESET;     log_level_display = "MSG"; break;
     }
 
-    std::cout << log_colour << "[" << log_level_display << "]" << " - [" << file << " : ````" << line_no << "]"
-        << RESET << " :: " << message << "\n";
+    std::cout << log_colour << "[" << log_level_display << "]" << " - [" << file << " - L:" << line_no << "]"
+        << RESET << "\n\t :: " << message << "\n";
 }
