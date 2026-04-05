@@ -6,13 +6,14 @@
 
 #include <memory>
 
+
 namespace engine::rendering
 {
     class Window
     {
     public:
-        // Constructor is used to setup the primary window
-        Window(int width, int height, std::string_view window_name);
+        // Constructor is used to set up the primary window
+        Window(unsigned int width, unsigned int height, const std::string& window_name);
         ~Window();
 
         // Initialize any windowing sub-systems
@@ -23,11 +24,11 @@ namespace engine::rendering
 
         // ==== Helper Functions ====
 
-        sf::Window& get_window();
+        sf::Window& get_window() { return m_window; }
 
     private:
-        int m_width{};
-        int m_height{};
+        unsigned int m_width{};
+        unsigned int m_height{};
         std::unique_ptr<sf::Window> m_window{};
     };
 }

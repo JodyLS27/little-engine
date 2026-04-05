@@ -20,6 +20,10 @@ void engine::core::App::initialize()
 
 void engine::core::App::run()
 {
+    // TODO: Seeing as the app will own the window object, The window will get created here, in run
+    // TODO: I need an `is_open()` function. (true, Open | false, closed)
+    // TODO: window.initialize() just setups up the renderer which draws stuff to the screen as it is the render manager.
+    // TODO: Not sure if it should live here or not, maybe it will live in window and get referenced in app ?
     LL_LOG_INFO("engine main loop Running");
 }
 
