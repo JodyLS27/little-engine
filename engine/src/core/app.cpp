@@ -7,15 +7,19 @@
 
 engine::core::App::App()
 {
+    LL_LOG_INFO("Engine Application construction.");
 }
 
-engine::core::App::~App()
-{
-}
+engine::core::App::~App() { }
 
 void engine::core::App::initialize()
 {
-    LL_LOG_INFO("engine Application initialized!");
+    // TODO: Pass these through from the editor !
+    m_window = std::make_unique<rendering::Window>(800, 600, "Little Learners");
+    m_window->initialize();
+    LL_LOG_INFO("Engine Application initialize - Window:Complete");
+
+    LL_LOG_INFO("Engine Application initialized");
 }
 
 void engine::core::App::run()

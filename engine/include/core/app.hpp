@@ -4,7 +4,10 @@
 
 #pragma once
 
+#include <memory>
+
 # include "defines.hpp"
+#include "rendering/window.hpp"
 
 namespace engine::core
 {
@@ -20,7 +23,10 @@ namespace engine::core
         // Main engine loop that runs
         void run();
 
-        // used to destory any objects and or subsystems
+        // used to destroy any objects and or subsystems
         void shutdown();
+
+    private:
+        std::unique_ptr<rendering::Window> m_window;
     };
 }

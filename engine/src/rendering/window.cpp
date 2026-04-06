@@ -2,7 +2,7 @@
 #include <SFML/Window.hpp>
 
 engine::rendering::Window::Window(const unsigned int width, const unsigned int height, const std::string& window_name)
-    : m_width(width), m_height(width), m_window_name(window_name)
+    : m_width(width), m_height(height), m_window_name(window_name)
 {
     // Setting up the window object when the class is initialized to keep it seperate from the initialize() function
     m_window = std::make_unique<sf::Window>(sf::VideoMode({m_width, m_height}), window_name);
