@@ -5,8 +5,7 @@
 #pragma once
 
 #include <memory>
-
-# include "defines.hpp"
+#include "core/defines.hpp" // Defines are here so any project including engine/ gets the Requried macros
 #include "rendering/window.hpp"
 
 namespace engine::core
@@ -18,7 +17,7 @@ namespace engine::core
         ~App();
 
         // Setup any sub systems and internal classes
-        void initialize();
+        bool initialize();
 
         // Main engine loop that runs
         void run();

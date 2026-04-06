@@ -6,6 +6,12 @@
 
 #include <memory>
 
+// Forward declare
+namespace sf
+{
+    class Window;
+}
+
 namespace engine::rendering
 {
     class Window
@@ -13,7 +19,7 @@ namespace engine::rendering
     public:
         /* Constructor is used to set up the primary window */
         Window(unsigned int width, unsigned int height, const std::string& window_name);
-        ~Window() ;
+        ~Window();
 
         // Initialize any windowing sub-systems
         void initialize();
@@ -23,7 +29,8 @@ namespace engine::rendering
 
         // ==== Helper Functions ====
 
-        sf::Window& get_window() { return m_window; }
+        // Is the window object Open or not
+        bool is_open();
 
     private:
         unsigned int m_width{};

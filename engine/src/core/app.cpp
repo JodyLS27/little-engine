@@ -12,7 +12,7 @@ engine::core::App::App()
 
 engine::core::App::~App() { }
 
-void engine::core::App::initialize()
+bool engine::core::App::initialize()
 {
     // TODO: Pass these through from the editor !
     m_window = std::make_unique<rendering::Window>(800, 600, "Little Learners");
@@ -20,6 +20,8 @@ void engine::core::App::initialize()
     LL_LOG_INFO("Engine Application initialize - Window:Complete");
 
     LL_LOG_INFO("Engine Application initialized");
+
+    return true;
 }
 
 void engine::core::App::run()
@@ -28,7 +30,16 @@ void engine::core::App::run()
     // TODO: I need an `is_open()` function. (true, Open | false, closed)
     // TODO: window.initialize() just setups up the renderer which draws stuff to the screen as it is the render manager.
     // TODO: Not sure if it should live here or not, maybe it will live in window and get referenced in app ?
-    LL_LOG_INFO("engine main loop Running");
+
+    if (!initialize())
+    {
+        LL_LOG_ERROR("ENGINE::APP::INITIALiZE:: Returned false, check the log for more details");
+    }
+
+    while (m_window->is_open())
+    {
+        LL_LOG_INFO("engine main loop Running");
+    }
 }
 
 void engine::core::App::shutdown()

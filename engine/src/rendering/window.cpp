@@ -1,6 +1,8 @@
 #include "rendering/window.hpp"
 #include <SFML/Window.hpp>
 
+#include "core/defines.hpp"
+
 engine::rendering::Window::Window(const unsigned int width, const unsigned int height, const std::string& window_name)
     : m_width(width), m_height(height), m_window_name(window_name)
 {
@@ -16,12 +18,17 @@ engine::rendering::Window::~Window()
 
 void engine::rendering::Window::initialize()
 {
-    // Initialize sub systems only or also display the window ?
-    // Dose run do that from the app ? as it owns the window...
+    LL_LOG_INFO("Window Initialize Complete");
 }
 
 void engine::rendering::Window::shutdown()
 {
-    // TODO: Check if the window is open, then close it
-    // TODO: Do your logging here !
+    LL_LOG_WARNING("Window Shutdown Compelte");
+}
+
+// ===== HELPER FUNCTIONS =====
+
+bool engine::rendering::Window::is_open()
+{
+    return m_window->isOpen();
 }
