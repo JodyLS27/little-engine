@@ -19,6 +19,12 @@ bool engine::core::App::initialize()
     m_window->initialize();
     LL_LOG_INFO("Engine Application initialize - Window:Complete");
 
+    if (!m_window->is_open())
+    {
+        LL_LOG_ERROR("ENGINE::CORE::APP:INITIALIZE: The window is NOT Open");
+        return false;
+    }
+
     LL_LOG_INFO("Engine Application initialized");
 
     return true;
@@ -26,25 +32,23 @@ bool engine::core::App::initialize()
 
 void engine::core::App::run()
 {
-    // TODO: Seeing as the app will own the window object, The window will get created here, in run
-    // TODO: I need an `is_open()` function. (true, Open | false, closed)
-    // TODO: window.initialize() just setups up the renderer which draws stuff to the screen as it is the render manager.
-    // TODO: Not sure if it should live here or not, maybe it will live in window and get referenced in app ?
-
-    if (!initialize())
-    {
-        LL_LOG_ERROR("ENGINE::APP::INITIALiZE:: Returned false, check the log for more details");
-    }
-
+    LL_LOG_INFO("engine main loop running");
     while (m_window->is_open())
     {
-        LL_LOG_INFO("engine main loop Running");
+        // TODO: Setup pollEvents
+        // TODO: Do Sprite Drawing
+        // TODO: Do window clear
+        // TODO: Do Window Draw
     }
+
+    LL_LOG_INFO("engine main loop ended");
 }
 
 void engine::core::App::shutdown()
 {
     LL_LOG_INFO("engine subsystems shutting down!");
+    m_window->shutdown();
+    m_window.reset();
 }
 
 

@@ -18,12 +18,15 @@ engine::rendering::Window::~Window()
 
 void engine::rendering::Window::initialize()
 {
+    // TODO: window.initialize() just setups up the renderer which draws stuff to the screen as it is the render manager.
     LL_LOG_INFO("Window Initialize Complete");
 }
 
 void engine::rendering::Window::shutdown()
 {
-    LL_LOG_WARNING("Window Shutdown Compelte");
+    // Reset pointers
+    m_window.reset();
+    LL_LOG_WARNING("Window Shutdown Complete");
 }
 
 // ===== HELPER FUNCTIONS =====
