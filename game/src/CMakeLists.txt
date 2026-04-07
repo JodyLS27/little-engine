@@ -1,3 +1,5 @@
 # Game src CMakeLists
 
-target_sources(game PRIVATE)
+target_sources(game PRIVATE
+        main.cpp
+)
