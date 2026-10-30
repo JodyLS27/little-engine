@@ -15,8 +15,8 @@ engine::runtime::Engine::~Engine() {}
 bool engine::runtime::Engine::Initialize()
 {
 	// TODO: Pass these through from the editor !
-	m_upWindow = std::make_unique<rendering::Window>(800, 600, "Little Learners");
-	m_upWindow->initialize();
+	m_upWindow = std::make_unique<windowing::Window>(800, 600, "Little Learners");
+	m_upWindow->Initialize();
 	LL_LOG_INFO("Engine Application initialize - Window:Complete");
 
 	if (!m_upWindow->is_open())

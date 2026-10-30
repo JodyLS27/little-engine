@@ -9,8 +9,5 @@ add_subdirectory(Src)
 
 # Link SFML
 target_link_libraries(engine PRIVATE
-    SFML::Graphics
-    SFML::Window
-    SFML::System
-    SFML::Audio
+    
 )

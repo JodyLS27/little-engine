@@ -6,13 +6,7 @@
 
 #include <memory>
 
-// Forward declare
-namespace sf
-{
-    class Window;
-}
-
-namespace engine::rendering
+namespace engine::windowing
 {
     class Window
     {
@@ -22,10 +16,10 @@ namespace engine::rendering
         ~Window();
 
         // Initialize any windowing sub-systems
-        void initialize();
+        void Initialize();
 
         // Shutdown any windowing sub-systems
-        void shutdown();
+        void Shutdown();
 
         // ==== Helper Functions ====
 
@@ -37,6 +31,7 @@ namespace engine::rendering
         unsigned int m_height{};
         std::string m_window_name{};
 
-        std::unique_ptr<sf::Window> m_window{};
+		// Setup the Windowing sub-system correctly for the platforms.
+        std::unique_ptr<> m_window{};
     };
 }
