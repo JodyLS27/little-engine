@@ -3,7 +3,7 @@
 // Description: Holds the main game loop and represents the engine application lifecyle.
 //
 
-#include "core/app.hpp"
+#include "../../include/Runtime/app.hpp"
 
 engine::core::App::App()
 {
