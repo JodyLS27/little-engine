@@ -1,5 +1,6 @@
 # IDE
 *.idea/*
+*.vs/*
 
 # Prerequisites
 *.d
@@ -31,8 +32,11 @@
 
 # Executables
 *.exe
-*.out
 *.app
+*.out
+
+# Build Directores
+out/*
 
 # Claude
 /memory/*
