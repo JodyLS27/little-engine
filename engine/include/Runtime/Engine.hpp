@@ -8,24 +8,24 @@
 #include "core/defines.hpp" // Defines are here so any project including engine/ gets the Requried macros
 #include "rendering/window.hpp"
 
-namespace engine::core
+namespace engine::runtime
 {
-    class App
-    {
-    public:
-        App();
-        ~App();
+	class Engine
+	{
+	public:
+		Engine();
+		~Engine();
 
-        // Setup any sub systems and internal classes
-        bool initialize();
+		// Setup any sub systems and internal classes
+		bool Initialize();
 
-        // Main engine loop that runs
-        void run();
+		// Main engine loop that runs
+		void Run();
 
-        // used to destroy any objects and or subsystems
-        void shutdown();
+		// used to destroy any objects and or subsystems
+		void Shutdown();
 
-    private:
-        std::unique_ptr<rendering::Window> m_window;
-    };
+	private:
+		std::unique_ptr<rendering::Window> m_upWindow;
+	};
 }

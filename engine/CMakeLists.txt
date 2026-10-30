@@ -2,10 +2,10 @@
 
 # Used to mark this as a Static Library: .lib
 add_library(engine STATIC)
-target_include_directories(engine PUBLIC include)
+target_include_directories(engine PUBLIC Include)
 
 # The CMakeLists has the target_sources()
-add_subdirectory(src)
+add_subdirectory(Src)
 
 # Link SFML
 target_link_libraries(engine PRIVATE

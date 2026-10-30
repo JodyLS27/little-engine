@@ -3,52 +3,50 @@
 // Description: Holds the main game loop and represents the engine application lifecyle.
 //
 
-#include "../../include/Runtime/app.hpp"
+#include "Runtime/Engine.hpp"
 
-engine::core::App::App()
+engine::runtime::Engine::Engine()
 {
-    LL_LOG_INFO("Engine Application construction.");
+	LL_LOG_INFO("Engine Application construction.");
 }
 
-engine::core::App::~App() { }
+engine::runtime::Engine::~Engine() {}
 
-bool engine::core::App::initialize()
+bool engine::runtime::Engine::Initialize()
 {
-    // TODO: Pass these through from the editor !
-    m_window = std::make_unique<rendering::Window>(800, 600, "Little Learners");
-    m_window->initialize();
-    LL_LOG_INFO("Engine Application initialize - Window:Complete");
+	// TODO: Pass these through from the editor !
+	m_upWindow = std::make_unique<rendering::Window>(800, 600, "Little Learners");
+	m_upWindow->initialize();
+	LL_LOG_INFO("Engine Application initialize - Window:Complete");
 
-    if (!m_window->is_open())
-    {
-        LL_LOG_ERROR("ENGINE::CORE::APP:INITIALIZE: The window is NOT Open");
-        return false;
-    }
+	if (!m_upWindow->is_open())
+	{
+		LL_LOG_ERROR("ENGINE::CORE::APP:INITIALIZE: The window is NOT Open");
+		return false;
+	}
 
-    LL_LOG_INFO("Engine Application initialized");
+	LL_LOG_INFO("Engine Application initialized");
 
-    return true;
+	return true;
 }
 
-void engine::core::App::run()
+void engine::runtime::Engine::Run()
 {
-    LL_LOG_INFO("engine main loop running");
-    while (m_window->is_open())
-    {
-        // TODO: Setup pollEvents
-        // TODO: Do Sprite Drawing
-        // TODO: Do window clear
-        // TODO: Do Window Draw
-    }
+	LL_LOG_INFO("engine main loop running");
+	while (m_upWindow->is_open())
+	{
+		// TODO: Setup pollEvents
+		// TODO: Do Sprite Drawing
+		// TODO: Do window clear
+		// TODO: Do Window Draw
+	}
 
-    LL_LOG_INFO("engine main loop ended");
+	LL_LOG_INFO("engine main loop ended");
 }
 
-void engine::core::App::shutdown()
+void engine::runtime::Engine::Shutdown()
 {
-    LL_LOG_INFO("engine subsystems shutting down!");
-    m_window->shutdown();
-    m_window.reset();
+	LL_LOG_INFO("engine subsystems shutting down!");
+	m_upWindow->shutdown();
+	m_upWindow.reset();
 }
-
-
