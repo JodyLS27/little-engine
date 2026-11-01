@@ -47,6 +47,6 @@ void engine::runtime::Engine::Run()
 void engine::runtime::Engine::Shutdown()
 {
 	LL_LOG_INFO("engine subsystems shutting down!");
-	m_upWindow->shutdown();
+	m_upWindow->Shutdown();
 	m_upWindow.reset();
 }

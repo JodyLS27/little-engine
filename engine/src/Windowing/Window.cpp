@@ -32,6 +32,8 @@ void engine::windowing::Window::Shutdown()
 
 bool engine::windowing::Window::is_open()
 {
+    // TODO: Might not need, need to check with GLFW
     // NOTE: isOpen is an SFML Window Function, Create Agnostic open check, Platform Specific
-    return m_window->isOpen();
+    //return m_upWindow->isOpen();
+    return false; // TODO: Remove
 }

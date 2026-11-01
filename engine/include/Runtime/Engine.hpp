@@ -5,8 +5,8 @@
 #pragma once
 
 #include <memory>
-#include "core/defines.hpp" // Defines are here so any project including engine/ gets the Requried macros
-#include "rendering/window.hpp"
+#include "Core/Defines.hpp" // Defines are here so any project including engine/ gets the Requried macros
+#include "Windowing/Window.hpp"
 
 namespace engine::runtime
 {
@@ -26,6 +26,6 @@ namespace engine::runtime
 		void Shutdown();
 
 	private:
-		std::unique_ptr<rendering::Window> m_upWindow;
+		std::unique_ptr<windowing::Window> m_upWindow;
 	};
 }

@@ -5,6 +5,7 @@
 #pragma once
 
 #include <memory>
+#include <string>
 
 namespace engine::windowing
 {
@@ -32,6 +33,6 @@ namespace engine::windowing
         std::string m_window_name{};
 
 		// Setup the Windowing sub-system correctly for the platforms.
-        std::unique_ptr<> m_window{};
+        //std::unique_ptr<> m_window{};
     };
 }
