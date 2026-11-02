@@ -21,10 +21,6 @@ else()
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# fetch-content for the vcpkg manager
-find_package(SFML 3 COMPONENTS Graphics Window Audio System CONFIG REQUIRED)
-
 # Include Subdirectories/Projects
 add_subdirectory(engine)
 add_subdirectory(editor)
-add_subdirectory(game)
