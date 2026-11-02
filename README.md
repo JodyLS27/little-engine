@@ -1,13 +1,18 @@
 # Introduction 
-This repo holds a custom engine that is used to power an editor
-and a game. Its a purpose built engine for the game project.
+My first dive into building a game engine while learning Vulkan.<br/>
+The plan here, is to expand on my C++ and system architecture skills while I learn vulkan and having some fun with it.
 
 # Getting Started
-This Project uses the following Libraries to and Frameworks to build the project:
+This Project uses the following Libraries and Frameworks to build the project:
 
+## Build System
 - CMake
-- SFML
-- VCPKG
+
+## Package Manager
+- VCPKG (Currently Not in Use)
+
+## Libraries
+- GLWF
 
 ## Windows Setup
 > _**TODO:** Setup a getting started Guide_
@@ -17,13 +22,13 @@ This Project uses the following Libraries to and Frameworks to build the project
 
 # Build and Test
 ### Tests
-> @note: No test Squite setup yet, Implementation required.
+> @note: No tests setup yet, Implementation required.
 
 > _**TODO:** Setup a Test suite, `Google test` or `Catch2`_ <br/>
 > _**TODO:** Add initial tests to get test up and running_  
 
 ### Builds
-> @note: Currently, Builds are being done through the IDE but a Compiller command
-should be setup here for others.
+> _**@NOTE:** Currently, Builds are being done through the IDE such as `CLion` and `Visual Studio`. I have not tested
+yet with VS Code or using Shell commands to build the project_.
 
-> _**TODO:** Get the Builds to happen automatically._
+> _**TODO:** Get the Builds to happen automatically for releases._
