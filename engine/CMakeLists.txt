@@ -5,7 +5,7 @@ include(FetchContent)
 
 # Used to mark this as a Static Library: .lib
 add_library(engine STATIC)
-target_include_directories(engine PUBLIC Include)
+target_include_directories(engine PUBLIC include)
 
 # Prevent GLFW from building its Own Docs, Tests
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
@@ -23,7 +23,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(glfw)
 
 # The CMakeLists has the target_sources()
-add_subdirectory(Src)
+add_subdirectory(src)
 
 # Link SFML
 target_link_libraries(engine PRIVATE

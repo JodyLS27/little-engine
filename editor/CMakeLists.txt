@@ -1,7 +1,12 @@
 # Editor CMakeLists
 
 # Executable applications
-add_executable(editor)
+add_executable(editor src/main.cpp)
+
+
+target_compile_definitions(editor PRIVATE 
+    PROJECT_NAME="${PROJECT_NAME}"
+)
 
 # Add the `editor` and `engine` include directories
 target_include_directories(editor PRIVATE include)
