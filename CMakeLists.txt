@@ -24,4 +24,3 @@ endif()
 # Include Subdirectories/Projects
 add_subdirectory(engine)
 add_subdirectory(editor)
-add_subdirectory(game)
