@@ -1,5 +1,8 @@
 #pragma once
 
+#include <string>
+#include <memory>
+
 namespace engine::windowing
 {
 	struct WindowProperties
@@ -24,7 +27,7 @@ namespace engine::windowing
 
 		virtual void* GetNativeWindowHandle() const = 0;
 		// ~ End Getters
-		
+
 		static std::unique_ptr<IWindow> Create(const WindowProperties& Props = WindowProperties());
 	};
 
