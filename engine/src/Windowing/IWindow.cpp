@@ -4,7 +4,6 @@
 	#include "Windowing/GLFWWindow.hpp"
 #endif
 
-
 namespace engine::windowing
 {
 	std::unique_ptr<IWindow> engine::windowing::IWindow::Create(const WindowProperties& Props)

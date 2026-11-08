@@ -5,11 +5,14 @@
 
 namespace engine::windowing
 {
+	/**
+	* All properties for the window like, Width, Height, Etc
+	*/
 	struct WindowProperties
 	{
 		uint32_t Width{ 1280 };
 		uint32_t Height{ 720 };
-		std::string WindowTitle{ "Little Engine" };
+		std::string WindowTitle{ "Window Title" };
 	};
 
 
@@ -20,6 +23,10 @@ namespace engine::windowing
 		virtual ~IWindow() = default;
 
 		virtual void OnUpdate() = 0;
+
+		// ~ Checkers
+		virtual bool IsOpen() const = 0;
+		// ~ End Checkers
 
 		// ~ Getters
 		virtual uint32_t GetWidth() const = 0;
