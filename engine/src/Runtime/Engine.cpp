@@ -4,49 +4,54 @@
 //
 
 #include "Runtime/Engine.hpp"
+#include "windowing/IWindow.hpp"
 
-engine::runtime::Engine::Engine()
+
+namespace engine::runtime
 {
-	LL_LOG_INFO("Engine Application construction.");
-}
-
-engine::runtime::Engine::~Engine() {}
-
-bool engine::runtime::Engine::Initialize()
-{
-	// TODO: Pass these through from the editor !
-	m_upWindow = std::make_unique<windowing::Window>(800, 600, "Little Learners");
-	m_upWindow->Initialize();
-	LL_LOG_INFO("Engine Application initialize - Window:Complete");
-
-	if (!m_upWindow->is_open())
+	bool Engine::Initialize()
 	{
-		LL_LOG_ERROR("ENGINE::CORE::APP:INITIALIZE: The window is NOT Open");
-		return false;
+		LL_LOG_INFO("Engine Application initialize - Window:Complete");
+		
+		// Create a windowing data struct to pass through
+		engine::windowing::WindowProperties windowProperties{ 1920, 1080, "Little Engine" };
+		
+		m_upWindow = engine::windowing::IWindow::Create(windowProperties);
+
+
+		// TODO: Pass these through from the editor !
+		/*m_upWindow = windowing::
+		m_upWindow->Initialize();
+
+		if (!m_upWindow->is_open())
+		{
+			LL_LOG_ERROR("ENGINE::CORE::APP:INITIALIZE: The window is NOT Open");
+			return false;
+		}*/
+
+		LL_LOG_INFO("Engine Application initialized");
+
+		return true;
 	}
 
-	LL_LOG_INFO("Engine Application initialized");
-
-	return true;
-}
-
-void engine::runtime::Engine::Run()
-{
-	LL_LOG_INFO("engine main loop running");
-	while (m_upWindow->is_open())
+	void Engine::Run()
 	{
-		// TODO: Setup pollEvents
-		// TODO: Do Sprite Drawing
-		// TODO: Do window clear
-		// TODO: Do Window Draw
+		LL_LOG_INFO("engine main loop running");
+		while (m_upWindow->is_open())
+		{
+			// TODO: Setup pollEvents
+			// TODO: Do Sprite Drawing
+			// TODO: Do window clear
+			// TODO: Do Window Draw
+		}
+
+		LL_LOG_INFO("engine main loop ended");
 	}
 
-	LL_LOG_INFO("engine main loop ended");
-}
-
-void engine::runtime::Engine::Shutdown()
-{
-	LL_LOG_INFO("engine subsystems shutting down!");
-	m_upWindow->Shutdown();
-	m_upWindow.reset();
+	void Engine::Shutdown()
+	{
+		LL_LOG_INFO("engine subsystems shutting down!");
+		m_upWindow->Shutdown();
+		m_upWindow.reset();
+	}
 }

@@ -16,8 +16,8 @@ namespace engine::runtime
 	class Engine
 	{
 	public:
-		Engine();
-		~Engine();
+		Engine() = default;
+		~Engine() = default;
 
 		// Setup any sub systems and internal classes
 		bool Initialize();
@@ -29,6 +29,7 @@ namespace engine::runtime
 		void Shutdown();
 
 	private:
-		std::unique_ptr<engine::windowing::IWindow> m_upWindow;
+		// IWindow will return a Unique Pointer to the correct windowing system based on the platform
+		std::unique_ptr<windowing::IWindow> m_upWindow;
 	};
 }
