@@ -1,10 +1,11 @@
 #pragma once
 
+// ~ Engine Internal
+#include "Windowing/IWindow.hpp"
+
 // ~ Third Party Libraries
 #include <GLFW/glfw3.h>
 
-// ~ Engine Internal
-#include "Windowing/IWindow.hpp"
 
 namespace engine::windowing
 {
@@ -15,10 +16,16 @@ namespace engine::windowing
 
 		~GLFWWindow() override;
 
+		// ~ Main window functions
 		void OnUpdate() override;
 
-		uint32_t GetWidth() const override;
-		uint32_t GetHeight() const override;
+		void Shutdown() override;
+		// ~ End Main window functions
+
+		bool IsOpen() const override;
+
+		uint32_t GetWidth() const override { return m_uiWidth; }
+		uint32_t GetHeight() const override { return m_uiHeight; }
 
 		void* GetNativeWindowHandle() const override;
 

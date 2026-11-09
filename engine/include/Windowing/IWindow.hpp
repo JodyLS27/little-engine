@@ -22,9 +22,15 @@ namespace engine::windowing
 	public:
 		virtual ~IWindow() = default;
 
+		// ~ Main window functions
 		virtual void OnUpdate() = 0;
 
+		/** Can Implement in a Platform specific Windowing if needed*/
+		virtual void Shutdown();
+		// ~ End Main window functions
+
 		// ~ Checkers
+		/** Native Platform API check for if the window is currently open */
 		virtual bool IsOpen() const = 0;
 		// ~ End Checkers
 

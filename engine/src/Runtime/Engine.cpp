@@ -37,7 +37,7 @@ namespace engine::runtime
 	void Engine::Run()
 	{
 		LL_LOG_INFO("engine main loop running");
-		while (m_upWindow->is_open())
+		while (m_upWindow->IsOpen())
 		{
 			// TODO: Setup pollEvents
 			// TODO: Do Sprite Drawing
@@ -51,7 +51,7 @@ namespace engine::runtime
 	void Engine::Shutdown()
 	{
 		LL_LOG_INFO("engine subsystems shutting down!");
-		m_upWindow->Shutdown();
+		//m_upWindow->Shutdown();
 		m_upWindow.reset();
 	}
 }
