@@ -1,6 +1,7 @@
 # Target Sources files: Engine source files
-target_sources(engine PRIVATE
+target_sources(engine PRIVATE        
         Core/Logger.cpp
-        Runtime/Engine.cpp
-        
- "Windowing/IWindow.cpp")
+        Runtime/Engine.cpp        
+        Windowing/IWindow.cpp
+        Windowing/GLFWWindowing.cpp
+)
